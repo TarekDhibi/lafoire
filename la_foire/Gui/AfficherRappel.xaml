@@ -1,0 +1,314 @@
+﻿<Window x:Class="la_foire.Gui.AfficherRappel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                Title="Liste des rappels" Height="600" Width="1150"  Icon="../Img/hist.png"  >
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="61*"/>
+            <RowDefinition Height="434*"/>
+            <RowDefinition Height="75*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Margin="0,0,0.333,0" Height="60" VerticalAlignment="Top">
+            <Label Content="Veuillez choisir une réponse" FontSize="15"  HorizontalAlignment="Center"  ></Label>
+            <ComboBox x:Name="TBEtatrappelafficher" SelectionChanged="TBEtatrappelafficher_SelectionChanged"    VerticalAlignment="Center" Margin="415,31,408,8"  />
+        </Grid>
+        <Grid Margin="0,28.333,0.333,-0.333" Grid.RowSpan="2" Grid.Row="1">
+            <DataGrid x:Name="DataGridRappelInjoignable" x:FieldModifier="public" Visibility="Hidden"   Background="White" BorderBrush="#82c4c8" AutoGenerateColumns="False" MouseUp="DataGridRappelInjoignable_MouseUp"   CanUserAddRows="False" Margin="0,0,0.333,0" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding ID}" Width="1*" />
+                    <DataGridTextColumn Header="Id entreprise" Binding="{Binding IDENTREPRISE}" Width="5*" />
+                    <DataGridTextColumn Header="Date" Binding="{Binding DATE}" Width="5*" />
+                    <DataGridTextColumn Header="Heure" Binding="{Binding HEURE}" Width="5*" />
+                    <DataGridTextColumn Header="Numéro Tel" Binding="{Binding NUMTEL}" Width="5*" />
+                    <DataGridTextColumn Header="Nom" Binding="{Binding NOM}" Width="5*" />
+                    <DataGridTextColumn Header="Prénom" Binding="{Binding PRENOM}" Width="5*" />
+                    <DataGridTextColumn Header="Poste" Binding="{Binding POSTE}" Width="5*" />
+                    <DataGridTextColumn Header="Note" Binding="{Binding NOTE}" Width="5*" />
+
+
+                </DataGrid.Columns>
+
+            </DataGrid>
+            <DataGrid x:Name="DataGridRappelFauxNum" x:FieldModifier="public" Visibility="Hidden"   Background="White" BorderBrush="#82c4c8" AutoGenerateColumns="False" MouseUp="DataGridRappelFauxNum_MouseUp"   CanUserAddRows="False" Margin="0,0,0.333,0" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding ID}" Width="1*" />
+                    <DataGridTextColumn Header="Id entreprise" Binding="{Binding IDENTREPRISE}" Width="5*" />
+                    <DataGridTextColumn Header="Date" Binding="{Binding DATE}" Width="5*" />
+                    <DataGridTextColumn Header="Heure" Binding="{Binding HEURE}" Width="5*" />
+                    <DataGridTextColumn Header="Numéro Tel" Binding="{Binding NUMTEL}" Width="5*" />
+                    <DataGridTextColumn Header="Nom" Binding="{Binding NOM}" Width="5*" />
+                    <DataGridTextColumn Header="Prénom" Binding="{Binding PRENOM}" Width="5*" />
+                    <DataGridTextColumn Header="Poste" Binding="{Binding POSTE}" Width="5*" />
+                    <DataGridTextColumn Header="Note" Binding="{Binding NOTE}" Width="5*" />
+
+
+                </DataGrid.Columns>
+
+            </DataGrid>
+            <DataGrid x:Name="DataGridRappelNonInter" x:FieldModifier="public" Visibility="Hidden"   Background="White" BorderBrush="#82c4c8" AutoGenerateColumns="False" MouseUp="DataGridRappelNonInter_MouseUp"   CanUserAddRows="False" Margin="0,0,0.333,0" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding ID}" Width="1*" />
+                    <DataGridTextColumn Header="Id entreprise" Binding="{Binding IDENTREPRISE}" Width="5*" />
+                    <DataGridTextColumn Header="Date" Binding="{Binding DATE}" Width="5*" />
+                    <DataGridTextColumn Header="Heure" Binding="{Binding HEURE}" Width="5*" />
+                    <DataGridTextColumn Header="Numéro Tel" Binding="{Binding NUMTEL}" Width="5*" />
+                    <DataGridTextColumn Header="Nom" Binding="{Binding NOM}" Width="5*" />
+                    <DataGridTextColumn Header="Prénom" Binding="{Binding PRENOM}" Width="5*" />
+                    <DataGridTextColumn Header="Poste" Binding="{Binding POSTE}" Width="5*" />
+                    <DataGridTextColumn Header="Note" Binding="{Binding NOTE}" Width="5*" />
+
+
+                </DataGrid.Columns>
+
+            </DataGrid>
+            <DataGrid x:Name="DataGridRappelEnvoieMail" x:FieldModifier="public" Visibility="Hidden"   Background="White" BorderBrush="#82c4c8" AutoGenerateColumns="False" MouseUp="DataGridRappelEnvoieMail_MouseUp"   CanUserAddRows="False" Margin="0,0,0.333,0" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding ID}" Width="1*" />
+                    <DataGridTextColumn Header="Id entreprise" Binding="{Binding IDENTREPRISE}" Width="5*" />
+                    <DataGridTextColumn Header="Date" Binding="{Binding DATE}" Width="5*" />
+                    <DataGridTextColumn Header="Heure" Binding="{Binding HEURE}" Width="5*" />
+                    <DataGridTextColumn Header="Numéro Tel" Binding="{Binding NUMTEL}" Width="5*" />
+                    <DataGridTextColumn Header="Nom" Binding="{Binding NOM}" Width="5*" />
+                    <DataGridTextColumn Header="Prénom" Binding="{Binding PRENOM}" Width="5*" />
+                    <DataGridTextColumn Header="Poste" Binding="{Binding POSTE}" Width="5*" />
+                    <DataGridTextColumn Header="Mail1" Binding="{Binding MAIL1}" Width="5*" />
+                    <DataGridTextColumn Header="Note1" Binding="{Binding NOTE1}" Width="5*" />
+                    <DataGridTextColumn Header="Mail2" Binding="{Binding MAIL2}" Width="5*" />
+                    <DataGridTextColumn Header="Note2" Binding="{Binding NOTE2}" Width="5*" />
+                    <DataGridTextColumn Header="Etat" Binding="{Binding ETAT}" Width="5*" />
+                    <DataGridTextColumn Header="Note Générale" Binding="{Binding NOTEGENERALE}" Width="5*" />
+
+                </DataGrid.Columns>
+
+            </DataGrid>
+            <DataGrid x:Name="DataGridRappelEnvoieSms" x:FieldModifier="public" Visibility="Hidden"   Background="White" BorderBrush="#82c4c8" AutoGenerateColumns="False" MouseUp="DataGridRappelEnvoieSms_MouseUp"   CanUserAddRows="False" Margin="0,0,0.333,0" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding ID}" Width="1*" />
+                    <DataGridTextColumn Header="Id entreprise" Binding="{Binding IDENTREPRISE}" Width="5*" />
+                    <DataGridTextColumn Header="Date" Binding="{Binding DATE}" Width="5*" />
+                    <DataGridTextColumn Header="Heure" Binding="{Binding HEURE}" Width="5*" />
+                    <DataGridTextColumn Header="Numéro Tel" Binding="{Binding NUMTEL}" Width="5*" />
+                    <DataGridTextColumn Header="Nom" Binding="{Binding NOM}" Width="5*" />
+                    <DataGridTextColumn Header="Prénom" Binding="{Binding PRENOM}" Width="5*" />
+                    <DataGridTextColumn Header="Poste" Binding="{Binding POSTE}" Width="5*" />
+                    <DataGridTextColumn Header="Tel1" Binding="{Binding TEL1}" Width="5*" />
+                    <DataGridTextColumn Header="Note1" Binding="{Binding NOTE1}" Width="5*" />
+                    <DataGridTextColumn Header="Tel2" Binding="{Binding TEL2}" Width="5*" />
+                    <DataGridTextColumn Header="Note2" Binding="{Binding NOTE2}" Width="5*" />
+                    <DataGridTextColumn Header="Etat" Binding="{Binding ETAT}" Width="5*" />
+                    <DataGridTextColumn Header="Note Générale" Binding="{Binding NOTEGENERALE}" Width="5*" />
+
+                </DataGrid.Columns>
+
+            </DataGrid>
+            <DataGrid x:Name="DataGridRappelArapp" x:FieldModifier="public" Visibility="Hidden"   Background="White" BorderBrush="#82c4c8" AutoGenerateColumns="False" MouseUp="DataGridRappelArapp_MouseUp"   CanUserAddRows="False" Margin="0,0,0.333,0" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding ID}" Width="1*" />
+                    <DataGridTextColumn Header="Id entreprise" Binding="{Binding IDENTREPRISE}" Width="5*" />
+                    <DataGridTextColumn Header="Date" Binding="{Binding DATE}" Width="5*" />
+                    <DataGridTextColumn Header="Heure" Binding="{Binding HEURE}" Width="5*" />
+                    <DataGridTextColumn Header="Numéro Tel" Binding="{Binding NUMTEL}" Width="5*" />
+                    <DataGridTextColumn Header="Nom" Binding="{Binding NOM}" Width="5*" />
+                    <DataGridTextColumn Header="Prénom" Binding="{Binding PRENOM}" Width="5*" />
+                    <DataGridTextColumn Header="Poste" Binding="{Binding POSTE}" Width="5*" />
+                    <DataGridTextColumn Header="Tel1" Binding="{Binding TEL1}" Width="5*" />
+                    <DataGridTextColumn Header="Note1" Binding="{Binding NOTE1}" Width="5*" />
+                    <DataGridTextColumn Header="Tel2" Binding="{Binding TEL2}" Width="5*" />
+                    <DataGridTextColumn Header="Note2" Binding="{Binding NOTE2}" Width="5*" />
+                    <DataGridTextColumn Header="Date rappel" Binding="{Binding DATERAP}" Width="5*" />
+                    <DataGridTextColumn Header="Heure rappel" Binding="{Binding HEURERAP}" Width="5*" />
+                    <DataGridTextColumn Header="Note date rappel" Binding="{Binding NOTEDATERAP}" Width="5*" />
+                    <DataGridTextColumn Header="Cause rappel" Binding="{Binding CAUSERAP}" Width="5*" />
+                    <DataGridTextColumn Header="Note cause rappel" Binding="{Binding NOTECAUSERAP}" Width="5*" />
+                    <DataGridTextColumn Header="Priorité" Binding="{Binding PRIORITE}" Width="5*" />
+
+                </DataGrid.Columns>
+
+            </DataGrid>
+            <DataGrid x:Name="DataGridRappelRDV" x:FieldModifier="public"  Visibility="Hidden"   Background="White" BorderBrush="#82c4c8" AutoGenerateColumns="False" MouseUp="DataGridRappelRDV_MouseUp"   CanUserAddRows="False" Margin="0,0,0.333,0" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding ID}" Width="1*" />
+                    <DataGridTextColumn Header="Id entreprise" Binding="{Binding IDENTREPRISE}" Width="5*" />
+                    <DataGridTextColumn Header="Date" Binding="{Binding DATE}" Width="5*" />
+                    <DataGridTextColumn Header="Heure" Binding="{Binding HEURE}" Width="5*" />
+                    <DataGridTextColumn Header="Numéro Tel" Binding="{Binding NUMTEL}" Width="5*" />
+                    <DataGridTextColumn Header="Nom" Binding="{Binding NOM}" Width="5*" />
+                    <DataGridTextColumn Header="Prénom" Binding="{Binding PRENOM}" Width="5*" />
+                    <DataGridTextColumn Header="Poste" Binding="{Binding POSTE}" Width="5*" />
+                    <DataGridTextColumn Header="Date RDV" Binding="{Binding DATERDV}" Width="5*" />
+                    <DataGridTextColumn Header="Heure RDV" Binding="{Binding HEURERDV}" Width="5*" />
+                    <DataGridTextColumn Header="Note date RDV" Binding="{Binding NOTEDATERDV}" Width="5*" />
+                    <DataGridTextColumn Header="Adresse" Binding="{Binding ADRESSE}" Width="5*" />
+                    <DataGridTextColumn Header="Contact " Binding="{Binding CONTACT}" Width="5*" />
+                     
+
+                </DataGrid.Columns>
+
+            </DataGrid>
+
+        </Grid>
+        <Grid Grid.Row="2" >
+            <Expander x:Name="expanderjoignable" Visibility="Hidden" IsExpanded="False" Header="Filtres"    >
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <ComboBox x:Name="CBFiltresInjognable" Height="25" Grid.Column="0" SelectedIndex="0" Background="White">
+                        <ComboBoxItem Content="Identreprise	" />
+                        <ComboBoxItem Content="Date" />
+                        <ComboBoxItem Content="Heure" />
+                        <ComboBoxItem Content="Numtel" />
+                        <ComboBoxItem Content="Nom" />
+                        <ComboBoxItem Content="Prénom" />
+                        <ComboBoxItem Content="Note" />                  
+                        </ComboBox>
+                        <TextBox Background="White" Height="25" x:Name="TBFiltresinjoignable" Grid.Column="1" BorderBrush="#82c4c8" KeyUp="TBFiltresinjoignable_KeyUp" TextChanged="TBFiltresinjoignable_TextChanged" />
+                    </Grid>
+ 
+                </Expander>
+            <Expander x:Name="expanderFauxNum" Visibility="Hidden" IsExpanded="False" Header="Filtres"    >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <ComboBox x:Name="CBFiltresFauxNum" Height="25" Grid.Column="0" SelectedIndex="0" Background="White">
+                        <ComboBoxItem Content="Identreprise	" />
+                        <ComboBoxItem Content="Date" />
+                        <ComboBoxItem Content="Heure" />
+                        <ComboBoxItem Content="Numtel" />
+                        <ComboBoxItem Content="Nom" />
+                        <ComboBoxItem Content="Prénom" />
+                        <ComboBoxItem Content="Note" />
+                    </ComboBox>
+                    <TextBox Background="White" Height="25" x:Name="TBFiltresFauxNum" Grid.Column="1" BorderBrush="#82c4c8" KeyUp="TBFiltresFauxNum_KeyUp" TextChanged="TBFiltresFauxNum_TextChanged" />
+                </Grid>
+
+            </Expander>
+            <Expander x:Name="expanderNonInter" Visibility="Hidden" IsExpanded="False" Header="Filtres"    >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <ComboBox x:Name="CBFiltresNonInter" Height="25" Grid.Column="0" SelectedIndex="0" Background="White">
+                        <ComboBoxItem Content="Identreprise	" />
+                        <ComboBoxItem Content="Date" />
+                        <ComboBoxItem Content="Heure" />
+                        <ComboBoxItem Content="Numtel" />
+                        <ComboBoxItem Content="Nom" />
+                        <ComboBoxItem Content="Prénom" />
+                        <ComboBoxItem Content="Note" />
+                    </ComboBox>
+                    <TextBox Background="White" Height="25" x:Name="TBFiltresNonInter" Grid.Column="1" BorderBrush="#82c4c8" KeyUp="TBFiltresNonInter_KeyUp" TextChanged="TBFiltresNonInter_TextChanged" />
+                </Grid>
+
+            </Expander>
+            <Expander x:Name="expanderEnvoieMail" Visibility="Hidden" IsExpanded="False" Header="Filtres"    >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <ComboBox x:Name="CBFiltresEnvoieMail" Height="25" Grid.Column="0" SelectedIndex="0" Background="White">
+                        <ComboBoxItem Content="Identreprise	" />
+                        <ComboBoxItem Content="Date" />
+                        <ComboBoxItem Content="Heure" />
+                        <ComboBoxItem Content="Numtel" />
+                        <ComboBoxItem Content="Nom" />
+                        <ComboBoxItem Content="Prénom" />
+                        <ComboBoxItem Content="Mail1" />
+                        <ComboBoxItem Content="Note1" />
+                        <ComboBoxItem Content="Mail2" />
+                        <ComboBoxItem Content="Note2" />
+                        <ComboBoxItem Content="Etat" />
+                        <ComboBoxItem Content="Note générale" />
+                    </ComboBox>
+                    <TextBox Background="White" Height="25" x:Name="TBFiltresEnvoieMail" Grid.Column="1" BorderBrush="#82c4c8" KeyUp="TBFiltresEnvoieMail_KeyUp" TextChanged="TBFiltresEnvoieMail_TextChanged" />
+                </Grid>
+
+            </Expander>
+            <Expander x:Name="expanderEnvoieSms" Visibility="Hidden" IsExpanded="False" Header="Filtres"    >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <ComboBox x:Name="CBFiltresEnvoieSms" Height="25" Grid.Column="0" SelectedIndex="0" Background="White">
+                        <ComboBoxItem Content="Identreprise	" />
+                        <ComboBoxItem Content="Date" />
+                        <ComboBoxItem Content="Heure" />
+                        <ComboBoxItem Content="Numtel" />
+                        <ComboBoxItem Content="Nom" />
+                        <ComboBoxItem Content="Prénom" />
+                        <ComboBoxItem Content="tel1" />
+                        <ComboBoxItem Content="Note1" />
+                        <ComboBoxItem Content="tel2" />
+                        <ComboBoxItem Content="Note2" />
+                        <ComboBoxItem Content="Etat" />
+                        <ComboBoxItem Content="Note générale" />
+                    </ComboBox>
+                    <TextBox Background="White" Height="25" x:Name="TBFiltresEnvoieSms" Grid.Column="1" BorderBrush="#82c4c8" KeyUp="TBFiltresEnvoieSms_KeyUp" TextChanged="TBFiltresEnvoieSms_TextChanged" />
+                </Grid>
+
+            </Expander>
+            <Expander x:Name="expanderArapp" Visibility="Hidden" IsExpanded="False" Header="Filtres"    >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <ComboBox x:Name="CBFiltresArapp" Height="25" Grid.Column="0" SelectedIndex="0" Background="White">
+                        <ComboBoxItem Content="Identreprise	" />
+                        <ComboBoxItem Content="Date" />
+                        <ComboBoxItem Content="Heure" />
+                        <ComboBoxItem Content="Numtel" />
+                        <ComboBoxItem Content="Nom" />
+                        <ComboBoxItem Content="Prénom" />
+                        <ComboBoxItem Content="Poste" />
+                        <ComboBoxItem Content="tel1" />
+                        <ComboBoxItem Content="Note1" />
+                        <ComboBoxItem Content="tel2" />
+                        <ComboBoxItem Content="Note2" />
+                        <ComboBoxItem Content="Date rappel " />
+                        <ComboBoxItem Content="Heure rappel" />
+                        <ComboBoxItem Content="Note date rappel" />
+                        <ComboBoxItem Content="Cause rappel " />
+                        <ComboBoxItem Content="Note cause rappel" />
+                        <ComboBoxItem Content="Priorité" />
+                    </ComboBox>
+                    <TextBox Background="White" Height="25" x:Name="TBFiltresArapp" Grid.Column="1" BorderBrush="#82c4c8" KeyUp="TBFiltresArapp_KeyUp" TextChanged="TBFiltresArapp_TextChanged" />
+                </Grid>
+
+            </Expander>
+            <Expander x:Name="expanderRDV" Visibility="Hidden" IsExpanded="False" Header="Filtres"    >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <ComboBox x:Name="CBFiltresRDV" Height="25" Grid.Column="0" SelectedIndex="0" Background="White">
+                        <ComboBoxItem Content="Identreprise	" />
+                        <ComboBoxItem Content="Date" />
+                        <ComboBoxItem Content="Heure" />
+                        <ComboBoxItem Content="Numtel" />
+                        <ComboBoxItem Content="Nom" />
+                        <ComboBoxItem Content="Prénom" />
+                        <ComboBoxItem Content="Poste" />
+                        <ComboBoxItem Content="Date RDV" />
+                        <ComboBoxItem Content="Heure RDV" />
+                        <ComboBoxItem Content="Note date RDV" />
+                        <ComboBoxItem Content="Adresse" />
+                        <ComboBoxItem Content="Contact" />
+                        
+                    </ComboBox>
+                    <TextBox Background="White" Height="25" x:Name="TBFiltresRDV" Grid.Column="1" BorderBrush="#82c4c8" KeyUp="TBFiltresRDV_KeyUp" TextChanged="TBFiltresRDV_TextChanged" />
+                </Grid>
+
+            </Expander>
+
+        </Grid>
+    </Grid>
+</Window>

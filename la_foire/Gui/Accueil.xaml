@@ -1,0 +1,602 @@
+﻿<Window x:Class="la_foire.Gui.Accueil"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         Title="Principale" Height="900" Width="1150"   Icon="../Img/lafoirelogo.png"     WindowStartupLocation="CenterScreen" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="145.333"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Margin="0,0,0.333,0.333">
+            <Grid.Background>
+                <ImageBrush ImageSource="../Img/banner.png"/>
+            </Grid.Background>
+            <Menu x:Name="menueU" Margin="4" BorderBrush="Transparent" Background="Transparent" >
+                <MenuItem Header="" Width="22">
+                    <MenuItem.Icon>
+                        <Image Source="../Img/settings.png" />
+                    </MenuItem.Icon>
+
+                    <MenuItem x:Name="histo"  Header="_Historique"  Background="White" >
+                        <MenuItem.Icon>
+                            <Image  Source="../Img/hist.png"/>
+                        </MenuItem.Icon>
+                        <MenuItem Header="Administrateurs" Background="White" Click="MenuItem_Click_26">
+                            <MenuItem.Icon>
+                                <Image Source="../Img/agent.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </MenuItem>
+                    <MenuItem x:Name="MIDV" Header="_A propos"  Background="White" Click="MIDV_Click">
+                        <MenuItem.Icon>
+                            <Image  Source="../Img/aprops.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+
+
+                    <MenuItem x:Name="MIDeconnexion" Header="_Déconnexion"  Background="White" Click="MIDeconnexion_Click">
+                        <MenuItem.Icon>
+                            <Image Source="../Img/Deconnexion.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+
+                    <MenuItem x:Name="MIQuitter"  Header="_Quitter"  Background="White" Click="MIQuitter_Click">
+                        <MenuItem.Icon>
+                            <Image  Source="../Img/QuitterM.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+
+
+            </Menu>
+
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid VerticalAlignment="Stretch" x:Name="StkPanelContent" Margin="0,1,0.333,-0.667">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <TabControl Background="Transparent" Margin="0,1,0.333,-3"  >
+
+
+
+                    <TabItem x:Name="GestionEntreprises" Header="Entreprises"   Background="Pink">
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0"  Grid.Row="0" Margin="20,20,20.333,20.333" >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="13*" />
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+
+                                </Grid.ColumnDefinitions>
+
+                                <Label Content="Détailles"  Foreground="White" FontSize="24"  FontFamily="Segoe UI Light" Background="#82c4c8" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="0,0,330.333,0"/>
+                                <Button x:Name="afficherentreprises" Background="Pink" Content="Afficher les entreprises" Grid.Column="1" Margin="423.333,0,-9.667,0" Click="afficherentreprises_Click"></Button>
+                                <Button x:Name="btviderchamps" Background="#82c4c8" Content="Vider" Grid.Column="1" Margin="298.333,0,205.333,0" Click="btviderchamps_Click" RenderTransformOrigin="0.881,0.571"/>
+
+                                <Grid Grid.Row="1"  Margin="0,10,548.333,10.333" Grid.ColumnSpan="2">
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="9*"/>
+                                        <ColumnDefinition Width="9*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Content="Identifiant" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" />
+                                    <Label Content="Nom" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" />
+
+                                    <Label Content="Catégorie" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" />
+                                    <Label Content="Sous-catégorie" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" />
+                                    <Label Content="Gouvernorat" Grid.Column="0" Grid.Row="4" VerticalAlignment="Center" />
+                                    <Label Content="Délégation" Grid.Column="0" Grid.Row="5" VerticalAlignment="Center" />
+                                    <Label Content="Localité" Grid.Column="0" Grid.Row="6" VerticalAlignment="Center" />
+                                    <Label Content="Nom gérant" Grid.Column="0" Grid.Row="7" VerticalAlignment="Center" />
+                                    <Label Content="Prénom gérant" Grid.Column="0" Grid.Row="8" VerticalAlignment="Center" />
+                                    <Label Content="Adresse" Grid.Column="0" Grid.Row="9" VerticalAlignment="Center" />
+                                    <Label Content="Tél gérant 1" Grid.Column="0" Grid.Row="10" VerticalAlignment="Center" />
+                                    <Label Content="Tél gérant 2" Grid.Column="0" Grid.Row="11" VerticalAlignment="Center" />
+                                    <Label Content="Tél gérant 3" Grid.Column="0" Grid.Row="12" VerticalAlignment="Center" />
+                                    <Label Content="Etat" Grid.Column="0" Grid.Row="13" VerticalAlignment="Center" />
+
+                                    <TextBox x:Name="TBIden" x:FieldModifier="public" Grid.Column="1" Grid.Row="0" IsEnabled="False" VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBNom" x:FieldModifier="public" Grid.Column="1" Grid.Row="1"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBIdcat" x:FieldModifier="public" Grid.Column="1" Grid.Row="2" Visibility="Collapsed"   VerticalAlignment="Center" Margin="0,7"/>
+
+                                    <ComboBox x:Name="CBCat"     Grid.Column="1" Grid.Row="2" SelectionChanged="CBCat_SelectionChanged" VerticalAlignment="Center" Background="Transparent">
+
+                                    </ComboBox>
+                                    <TextBox x:Name="TBIdscat" x:FieldModifier="public" Grid.Column="1" Grid.Row="3" Visibility="Collapsed"   VerticalAlignment="Center" Margin="0,7"/>
+
+                                    <ComboBox x:Name="CBSCat"   Grid.Column="1" Grid.Row="3" SelectionChanged="CBSCat_SelectionChanged" VerticalAlignment="Center" Background="Transparent">
+
+                                    </ComboBox>
+                                    <TextBox x:Name="TBGouv" x:FieldModifier="public" Grid.Column="1" Grid.Row="4"   VerticalAlignment="Center"/>
+                                    <ComboBox x:Name="CBGouv"   Grid.Column="1" Grid.Row="4" SelectionChanged="CBGouv_SelectionChanged"   VerticalAlignment="Center" Background="Transparent">
+
+                                    </ComboBox>
+                                    <TextBox x:Name="TBDel" x:FieldModifier="public" Grid.Column="1" Grid.Row="5"   VerticalAlignment="Center"/>
+                                    <ComboBox x:Name="CBDel"   Grid.Column="1" Grid.Row="5" SelectionChanged="CBDel_SelectionChanged" VerticalAlignment="Center" Background="Transparent">
+
+                                    </ComboBox>
+                                    <TextBox x:Name="TBLoca" x:FieldModifier="public" Grid.Column="1" Grid.Row="6"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBNomg1" x:FieldModifier="public" Grid.Column="1" Grid.Row="7"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBPrenom" x:FieldModifier="public" Grid.Column="1" Grid.Row="8"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBAdresse" x:FieldModifier="public" Grid.Column="1" Grid.Row="9"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBTelg1" x:FieldModifier="public" Grid.Column="1" Grid.Row="10"  VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBTelg2" x:FieldModifier="public" Grid.Column="1" Grid.Row="11"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBTelg3" x:FieldModifier="public" Grid.Column="1" Grid.Row="12"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBETAT" x:FieldModifier="public" Grid.Column="1" Grid.Row="13"   VerticalAlignment="Center"/>
+                                    <ComboBox x:Name="TBEtat" Grid.Column="1" Grid.Row="13" SelectedIndex="0" VerticalAlignment="Center" Background="Transparent">
+                                        <ComboBoxItem>Jamais contactée</ComboBoxItem>
+                                        <ComboBoxItem>Inscrite</ComboBoxItem>
+                                        <ComboBoxItem>Rappels en cours</ComboBoxItem>
+                                        <ComboBoxItem>Rappels terminés</ComboBoxItem>
+                                    </ComboBox>
+                                </Grid>
+                                <Grid Grid.Row="1" Grid.Column="1"  Margin="0.333,10,0.333,10.333">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="2*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="9*"/>
+                                        <ColumnDefinition Width="9*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Content="Tél entreprise 1 " Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    <Label Content="Tél entreprise 2 " Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    <Label Content="Tél entreprise 3 " Grid.Column="0" Grid.Row="2"  HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    <Label Content="Mail gérant 1    " Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    <Label Content="Mail gérant 2    " Grid.Column="0" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    <Label Content="Mail gérant 3    " Grid.Column="0" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    <Label Content="Mail entreprise 1" Grid.Column="0" Grid.Row="6"  HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    <Label Content="Mail entreprise 2" Grid.Column="0" Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    <Label Content="Mail entreprise 3" Grid.Column="0" Grid.Row="8" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    <Label Content="Source            " Grid.Column="0" Grid.Row="9" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    <Label Content="Lien du web      " Grid.Column="0" Grid.Row="10" HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+                                    <TextBox x:Name="TBTelen1" x:FieldModifier="public" Grid.Column="1" Grid.Row="0"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBTelen2" x:FieldModifier="public" Grid.Column="1" Grid.Row="1"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBTelen3" x:FieldModifier="public" Grid.Column="1" Grid.Row="2"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBmailg1" x:FieldModifier="public" Grid.Column="1" Grid.Row="3"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBmailg2" x:FieldModifier="public" Grid.Column="1" Grid.Row="4"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBmailg3" x:FieldModifier="public" Grid.Column="1" Grid.Row="5"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBmailen1" x:FieldModifier="public" Grid.Column="1" Grid.Row="6"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBmailen2" x:FieldModifier="public" Grid.Column="1" Grid.Row="7"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBmailen3" x:FieldModifier="public" Grid.Column="1" Grid.Row="8"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBsource" x:FieldModifier="public" Grid.Column="1" Grid.Row="9"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBlienweb" x:FieldModifier="public" Grid.Column="1" Grid.Row="10"  VerticalAlignment="Center"/>
+
+                                    <Label x:Name="Msgen" Grid.ColumnSpan="3" Grid.Row="11" MouseUp="Msgen_MouseUp" VerticalAlignment="Center" />
+
+                                    <Grid Grid.Row="12" Grid.ColumnSpan="3" >
+
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="1*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Button x:Name="BtAjouterentreprise" Grid.Column="0" Opacity="0.5" MouseEnter="BtAjouterentreprise_MouseEnter" MouseLeave="BtAjoutererentreprise_MouseLeave" BorderBrush="Transparent" Background="Transparent" Click="BtAjoutererentreprise_Click" Height="64" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                                            <Image Source="../Img/AddAdmin.png" ></Image>
+                                        </Button>
+                                        <Button x:Name="BtModifierentreprise" Grid.Column="2" Opacity="0.5" MouseEnter="BtModifiererentreprise_MouseEnter" MouseLeave="BtModifiererentreprise_MouseLeave" BorderBrush="Transparent" Background="Transparent" Click="BtModifiererentreprise_Click" Height="64" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                                            <Image Source="../Img/ModifierB.png"/>
+                                        </Button>
+                                        <Button x:Name="BtSupprimerentreprise" Grid.Column="4" Opacity="0.5" MouseEnter="BtSupprimererentreprise_MouseEnter" MouseLeave="BtSupprimererentreprise_MouseLeave" BorderBrush="Transparent" Background="Transparent" Click="BtSupprimererentreprise_Click" Height="64" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                                            <Image Source="../Img/SuppAdmin.png"/>
+                                        </Button>
+                                        <Button x:Name="BtConfirmerentreprise" Grid.Column="1" Visibility="Hidden" Opacity="0.5" MouseEnter="BtConfirmerentreprise_MouseEnter" MouseLeave="BtConfirmerentreprise_MouseLeave" BorderBrush="Transparent"  Background="Transparent" Click="BtConfirmerentreprise_Click" Height="64" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                                            <Image Source="../Img/confirm .png"/>
+                                        </Button>
+                                        <Button x:Name="BtAnnulerentreprise" Grid.Column="3"  Visibility="Hidden" Opacity="0.5" MouseEnter="BtAnnulerentreprise_MouseEnter" MouseLeave="BtAnnulerentreprise_MouseLeave" BorderBrush="Transparent" Background="Transparent" Click="BtAnnulerentreprise_Click"  Height="64" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                                            <Image Source="../Img/cancel.png"/>
+                                        </Button>
+                                    </Grid>
+
+                                </Grid>
+
+                            </Grid>
+
+                        </Grid>
+                    </TabItem>
+                    <TabItem x:Name="GestionRappels" Header="Rappels"   Background="Pink" Margin="0,-1,-4,-1">
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0"  Grid.Row="0" Margin="20,20,20.333,20.333" >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="13*" />
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+
+                                </Grid.ColumnDefinitions>
+                                <Label Content="Détailles"  Foreground="White" FontSize="24"  FontFamily="Segoe UI Light" Background="#82c4c8" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,0,9.667,0"/>
+                                <Button x:Name="afficherRapprel" Background="Pink" Content="Afficher les rappels" Grid.Column="1"   Click="afficherRapprel_Click" Margin="54.333,0,357.333,0"/>
+
+                                <Button x:Name="afficherentreprisesrapprel" Background="Pink" Content="Afficher les entreprises" Grid.Column="1" Margin="423.333,0,-10.667,0" Click="afficherentreprisesrapprel_Click"/>
+                                <Button x:Name="btviderchampsrappel"   Background="#82c4c8" Content="Vider" Grid.Column="1" Margin="284.333,0,219.333,0" Click="btviderchampsrappel_Click" RenderTransformOrigin="0.881,0.571"/>
+
+                                <Grid Grid.Row="1"  Margin="0,10,548.333,10.333" Grid.ColumnSpan="2">
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="9*"/>
+                                        <ColumnDefinition Width="9*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Content="Identifiant" Visibility="Hidden"  Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" />
+
+                                    <Label Content="Identifiant entreprise" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" />
+                                    <Label Content="Date " Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" />
+                                    <Label Content="Heure" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" />
+
+                                    <Label Content="Numéro Tel" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" />
+                                    <Label Content="Nom" Grid.Column="0" Grid.Row="4" VerticalAlignment="Center"  />
+                                    <Label Content="Prénom" Grid.Column="0" Grid.Row="5" VerticalAlignment="Center" />
+                                    <Label Content="Poste" Grid.Column="0" Grid.Row="6" VerticalAlignment="Center" />
+                                    <Label Content="Réponse " Grid.Column="0" Grid.Row="7" VerticalAlignment="Center" />
+                                    <Label x:Name="labelnoteinj" Visibility="Hidden" Content="Note " Grid.Column="0" Grid.Row="8" VerticalAlignment="Center" />
+                                    <Label x:Name="labelmail1env"  Visibility="Hidden"  Content="Mail 1 " Grid.Column="0" Grid.Row="8" VerticalAlignment="Center" />
+                                    <Label x:Name="labelnotenotemail1env"  Visibility="Hidden"  Content="Note mail 1 " Grid.Column="0" Grid.Row="9" VerticalAlignment="Center" />
+                                    <Label x:Name="labelmail2env"  Visibility="Hidden"  Content="Mail 2 " Grid.Column="0" Grid.Row="10" VerticalAlignment="Center" />
+                                    <Label x:Name="labelnotenotemail2env"  Visibility="Hidden"  Content="Note mail 2 " Grid.Column="0" Grid.Row="11" VerticalAlignment="Center" />
+                                    <Label x:Name="labeletatenv"  Visibility="Hidden"  Content="Etat " Grid.Column="0" Grid.Row="12" VerticalAlignment="Center" />
+                                    <Label x:Name="labelnotegeneralenv" Visibility="Hidden"   Content="Note générale " Grid.Column="0" Grid.Row="13" VerticalAlignment="Center" />
+                                    <Label x:Name="labeltel1sms"  Visibility="Hidden"  Content="Numéro tel 1  " Grid.Column="0" Grid.Row="8" VerticalAlignment="Center" />
+                                    <Label x:Name="labelnotenottel1sms"  Visibility="Hidden"  Content="Note tel 1 " Grid.Column="0" Grid.Row="9" VerticalAlignment="Center" />
+                                    <Label x:Name="labeltel2sms"  Visibility="Hidden"  Content="Numéro tel 2 " Grid.Column="0" Grid.Row="10" VerticalAlignment="Center" />
+                                    <Label x:Name="labelnotenotetel2sms"  Visibility="Hidden"  Content="Note tel 2 " Grid.Column="0" Grid.Row="11" VerticalAlignment="Center" />
+                                    <Label x:Name="labeletatsms"  Visibility="Hidden"  Content="Etat " Grid.Column="0" Grid.Row="12" VerticalAlignment="Center" />
+                                    <Label x:Name="labelnotegeneralsms" Visibility="Hidden"   Content="Note générale " Grid.Column="0" Grid.Row="13" VerticalAlignment="Center" />
+                                    <Label x:Name="labeltel1arpl"  Visibility="Hidden"   Content="Numéro tel 1  " Grid.Column="0" Grid.Row="8" VerticalAlignment="Center" />
+                                    <Label x:Name="labelnotetel1arpl"   Visibility="Hidden"  Content="Note tel 1  " Grid.Column="0" Grid.Row="9" VerticalAlignment="Center" />
+                                    <Label x:Name="labeltel2arpl"  Visibility="Hidden"   Content="Numéro tel 2  " Grid.Column="0" Grid.Row="10" VerticalAlignment="Center" />
+                                    <Label x:Name="labelnotetel2arpl"  Visibility="Hidden"  Content="Note tel 2  " Grid.Column="0" Grid.Row="11" VerticalAlignment="Center" />
+                                    <Label x:Name="labeldatearpl"   Visibility="Hidden"  Content="Date rappel" Grid.Column="0" Grid.Row="12" VerticalAlignment="Center" />
+                                    <Label x:Name="labelheurearpl"  Visibility="Hidden"   Content="Heure rappel" Grid.Column="0" Grid.Row="13" VerticalAlignment="Center" />
+                                    <Label x:Name="labeldateRDV" Visibility="Hidden" Content="Date" Grid.Column="0" Grid.Row="8" VerticalAlignment="Center" />
+                                    <Label x:Name="labelheureRDV" Visibility="Hidden" Content="Heure" Grid.Column="0" Grid.Row="9" VerticalAlignment="Center" />
+                                    <Label x:Name="labelnotedateRDV" Visibility="Hidden" Content="Note date RDV" Grid.Column="0" Grid.Row="10" VerticalAlignment="Center" />
+                                    <Label x:Name="labeladresseRDV" Visibility="Hidden" Content="Adresse" Grid.Column="0" Grid.Row="11" VerticalAlignment="Center" />
+                                    <Label x:Name="labelcontactRDV" Visibility="Hidden" Content="Contact " Grid.Column="0" Grid.Row="12" VerticalAlignment="Center" />
+
+                                    <Label Content="(*)" Foreground="Red" Grid.Column="2" Grid.Row="0" VerticalAlignment="Center"/>
+                                    <Label Content="(*)" Foreground="Red" Grid.Column="2" Grid.Row="7" VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBidrap" Visibility="Hidden" x:FieldModifier="public" IsEnabled="False" Grid.Column="1" Grid.Row="0"   VerticalAlignment="Center"/>
+
+                                    <TextBox x:Name="TBentrap" x:FieldModifier="public" IsEnabled="False" Grid.Column="1" Grid.Row="0"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBdaterap" x:FieldModifier="public"    IsEnabled="False" Grid.Column="1" Grid.Row="1"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBdheurerap" x:FieldModifier="public"    IsEnabled="False" Grid.Column="1" Grid.Row="2"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBtelrap" x:FieldModifier="public"      Grid.Column="1" Grid.Row="3"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBnomrap" x:FieldModifier="public"      Grid.Column="1" Grid.Row="4"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBprenomrap" x:FieldModifier="public"     Grid.Column="1" Grid.Row="5"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBposterap" x:FieldModifier="public"     Grid.Column="1" Grid.Row="6"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBnoteraping" x:FieldModifier="public"  Visibility="Hidden"   Grid.Column="1" Grid.Row="8"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBnoterapfauxnum" x:FieldModifier="public"  Visibility="Hidden"   Grid.Column="1" Grid.Row="8"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBnoterapnoninter" x:FieldModifier="public"  Visibility="Hidden"   Grid.Column="1" Grid.Row="8"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBmail1rapenv"  Visibility="Hidden" x:FieldModifier="public"     Grid.Column="1" Grid.Row="8"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBnotemail1rapenv"  Visibility="Hidden" x:FieldModifier="public"     Grid.Column="1" Grid.Row="9"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBmail2rapenv"  Visibility="Hidden" x:FieldModifier="public"     Grid.Column="1" Grid.Row="10"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBnotemail2rapenv"  Visibility="Hidden" x:FieldModifier="public"     Grid.Column="1" Grid.Row="11"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBnotegeneralerapenv" Visibility="Hidden" x:FieldModifier="public"     Grid.Column="1" Grid.Row="13"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBtel1rapsms"  Visibility="Hidden" x:FieldModifier="public"     Grid.Column="1" Grid.Row="8"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBnottel1rapsms"  Visibility="Hidden" x:FieldModifier="public"     Grid.Column="1" Grid.Row="9"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBtel2rapsms"  Visibility="Hidden" x:FieldModifier="public"     Grid.Column="1" Grid.Row="10"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBnotetel2rapsms"  Visibility="Hidden" x:FieldModifier="public"     Grid.Column="1" Grid.Row="11"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBnotegeneralerapsms" Visibility="Hidden" x:FieldModifier="public"     Grid.Column="1" Grid.Row="13"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBnumtel1arpl"  Visibility="Hidden"  x:FieldModifier="public"     Grid.Column="1" Grid.Row="8"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBnotenumtel1arpl"  Visibility="Hidden"  x:FieldModifier="public"     Grid.Column="1" Grid.Row="9"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBnumtel2arpl" Visibility="Hidden"   x:FieldModifier="public" Grid.Row="10" Grid.Column="1"  VerticalAlignment="Center"   />
+                                    <TextBox x:Name="TBnotenumtel2arpl"  Visibility="Hidden"   x:FieldModifier="public"     Grid.Column="1" Grid.Row="11"   VerticalAlignment="Center"/>
+                                    <DatePicker x:Name="TBndatearpl"  Visibility="Hidden"  x:FieldModifier="public"     Grid.Column="1" Grid.Row="12"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBheurearpl"  Visibility="Hidden"  x:FieldModifier="public"     Grid.Column="1" Grid.Row="13"   VerticalAlignment="Center"/>
+                                    <DatePicker x:Name="TBdateRDV" Visibility="Hidden"  x:FieldModifier="public"    Grid.Column="1" Grid.Row="8"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBheureRDV" Visibility="Hidden"  x:FieldModifier="public"    Grid.Column="1" Grid.Row="9"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBnoteRDV" Visibility="Hidden"  x:FieldModifier="public"    Grid.Column="1" Grid.Row="10"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBadresseRDV" Visibility="Hidden"  x:FieldModifier="public"    Grid.Column="1" Grid.Row="11"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBcontactRDV" Visibility="Hidden"  x:FieldModifier="public"    Grid.Column="1" Grid.Row="12"   VerticalAlignment="Center"/>
+
+
+
+
+                                    <ComboBox x:Name="TBEtatrappel" x:FieldModifier="public"  Grid.Column="1" SelectionChanged="TBEtatrappel_SelectionChanged" Background="Pink" BorderBrush="Pink" Grid.Row="7"    VerticalAlignment="Center" >
+
+                                    </ComboBox>
+
+                                    <ComboBox x:Name="CBEtatenvmail" x:FieldModifier="public" Visibility="Hidden" Grid.Column="1" Grid.Row="12" SelectedIndex="0" VerticalAlignment="Center" Background="Transparent">
+                                        <ComboBoxItem>En attente</ComboBoxItem>
+                                        <ComboBoxItem>Validé</ComboBoxItem>
+                                    </ComboBox>
+                                    <ComboBox x:Name="CBEtatenvsms" x:FieldModifier="public" Visibility="Hidden" Grid.Column="1" Grid.Row="12" SelectedIndex="0" VerticalAlignment="Center" Background="Transparent">
+                                        <ComboBoxItem>En attente</ComboBoxItem>
+                                        <ComboBoxItem>Validé</ComboBoxItem>
+                                    </ComboBox>
+
+
+
+
+                                </Grid>
+
+                                <Grid Grid.Row="1" Grid.Column="1"  Margin="0.333,10,0.333,10.333">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="2*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="9*"/>
+                                        <ColumnDefinition Width="9*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label x:Name="labelnotedaterpl"  HorizontalAlignment="Center" Visibility="Hidden" Content="Note Date rappel " Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" />
+                                    <Label x:Name="labelcauserpl" HorizontalAlignment="Center" Visibility="Hidden" Content="Cause rappel  " Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" />
+                                    <Label x:Name="labelnotecauserpl" HorizontalAlignment="Center" Visibility="Hidden" Content="Note cause rappel " Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" />
+                                    <TextBox x:Name="TBnotedatearpl"  Visibility="Hidden" x:FieldModifier="public" Grid.Column="1" Grid.Row="0"   VerticalAlignment="Center"/>
+                                    <TextBox x:Name="TBnotecausearpl"  Visibility="Hidden" x:FieldModifier="public" Grid.Column="1" Grid.Row="2"   VerticalAlignment="Center"/>
+
+                                    <ComboBox x:Name="CBcauserpl" x:FieldModifier="public" Visibility="Hidden" Grid.Column="1" Grid.Row="1" SelectedIndex="0" VerticalAlignment="Center" Background="Transparent">
+                                        <ComboBoxItem>Occupé</ComboBoxItem>
+                                        <ComboBoxItem>Pas responsable</ComboBoxItem>
+                                        <ComboBoxItem>Fixer RDV</ComboBoxItem>
+                                        <ComboBoxItem>Avoir décision</ComboBoxItem>
+                                        <ComboBoxItem>Autres</ComboBoxItem>
+                                    </ComboBox>
+                                    <ComboBox x:Name="CBprioritearpl" x:FieldModifier="public" Visibility="Hidden" Grid.Column="1" Grid.Row="3" SelectedIndex="0" VerticalAlignment="Center" Background="Transparent">
+                                        <ComboBoxItem>Elevée</ComboBoxItem>
+                                        <ComboBoxItem>Moyenne</ComboBoxItem>
+                                        <ComboBoxItem>Faible</ComboBoxItem>
+                                    </ComboBox>
+
+
+
+
+                                    <Label x:Name="labelprioriterpl" HorizontalAlignment="Center"  Visibility="Hidden" Content="Priorité        " Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" />
+
+
+                                    <Label x:Name="Msgrappel" Grid.ColumnSpan="3" Grid.Row="11" MouseUp="Msgen_MouseUp" VerticalAlignment="Center" />
+
+                                    <Grid Grid.Row="12" Grid.ColumnSpan="3" >
+
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="1*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Button x:Name="BtAjouterrapel" Grid.Column="0" Opacity="0.5" MouseEnter="BtAjouterrappel_MouseEnter" MouseLeave="BtAjouterrappel_MouseLeave" BorderBrush="Transparent" Background="Transparent" Click="BtAjoutererrappel_Click" Height="64" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                                            <Image Source="../Img/AddAdmin.png" ></Image>
+                                        </Button>
+                                        <Button x:Name="BtModifierrappel" Grid.Column="2" Opacity="0.5" MouseEnter="BtModifiererrappel_MouseEnter" MouseLeave="BtModifiererrappel_MouseLeave" BorderBrush="Transparent" Background="Transparent" Click="BtModifiererrappel_Click" Height="64" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                                            <Image Source="../Img/ModifierB.png"/>
+                                        </Button>
+                                        <Button x:Name="BtSupprimerrappel" Grid.Column="4" Opacity="0.5" MouseEnter="BtSupprimerrappel_MouseEnter" MouseLeave="BtSupprimerrappel_MouseLeave" BorderBrush="Transparent" Background="Transparent" Click="BtSupprimererrappel_Click" Height="64" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                                            <Image Source="../Img/SuppAdmin.png"/>
+                                        </Button>
+                                        <Button x:Name="BtConfirmerrappel" Grid.Column="1" Visibility="Hidden" Opacity="0.5" MouseEnter="BtConfirmerrappel_MouseEnter" MouseLeave="BtConfirmerrappel_MouseLeave" BorderBrush="Transparent"  Background="Transparent" Click="BtConfirmerrappel_Click" Height="64" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                                            <Image Source="../Img/confirm .png"/>
+                                        </Button>
+                                        <Button x:Name="BtAnnulerrappel" Grid.Column="3"  Visibility="Hidden" Opacity="0.5" MouseEnter="BtAnnulerrappel_MouseEnter" MouseLeave="BtAnnulerrappel_MouseLeave" BorderBrush="Transparent" Background="Transparent" Click="BtAnnulerrappel_Click"  Height="64" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                                            <Image Source="../Img/cancel.png"/>
+                                        </Button>
+                                    </Grid>
+
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </TabItem>
+                    <TabItem x:Name="GestionAdmin2" Header="Utilisateurs"   Background="Pink" Margin="3,-1,-5.333,-1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="3*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="1*" />
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Column="0" Grid.Row="1" Margin="20">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="3*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="5*"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Content="Détailles" Background="#82c4c8" FontFamily="Segoe UI Light" HorizontalAlignment="Stretch" Foreground="White" Grid.Row="0" FontSize="24"  VerticalAlignment="Center"></Label>
+                                    <Grid Grid.Row="1"  Margin="0,10">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="2*"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="9*"/>
+                                            <ColumnDefinition Width="9*"/>
+                                            <ColumnDefinition Width="2*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Content="Identifiant" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" />
+                                        <Label Content="Login" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" />
+                                        <Label Content="Mot de passe" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" />
+                                        <Label Content="e-Mail" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" />
+                                        <Label Content="Role" Grid.Column="0" Grid.Row="4" VerticalAlignment="Center" />
+                                        <Label Content="Etat" Grid.Column="0" Grid.Row="5" VerticalAlignment="Center" />
+                                        <TextBox x:Name="TBId" Grid.Column="1" Grid.Row="0" IsEnabled="False" VerticalAlignment="Center"/>
+                                        <TextBox x:Name="TBLogin" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center"/>
+                                        <TextBox x:Name="TBMotdePasse" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center"/>
+                                        <TextBox x:Name="TBMail" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center"/>
+                                        <ComboBox x:Name="TBRole" Grid.Column="1" Grid.Row="4" SelectedIndex="0" VerticalAlignment="Center" Background="Transparent">
+                                            <ComboBoxItem>Administrateur</ComboBoxItem>
+                                            <ComboBoxItem>Assistant</ComboBoxItem>
+                                            <ComboBoxItem>Agent de saisie</ComboBoxItem>
+                                            <ComboBoxItem>Utilisateur</ComboBoxItem>
+                                        </ComboBox>
+                                        <CheckBox x:Name="CHEtat" Grid.Column="1" Grid.Row="5" VerticalAlignment="Center"/>
+                                        <Label Content="(*)" Foreground="Red" Grid.Column="2" Grid.Row="1" VerticalAlignment="Center"/>
+                                        <Label Content="(*)" Foreground="Red" Grid.Column="2" Grid.Row="2" VerticalAlignment="Center"/>
+                                        <Label Content="(*)" Foreground="Red" Grid.Column="2" Grid.Row="3" VerticalAlignment="Center"/>
+                                        <Label x:Name="Msg" Grid.ColumnSpan="3" Grid.Row="6" MouseUp="Msg_MouseUp" VerticalAlignment="Center" />
+                                    </Grid>
+
+                                </Grid>
+
+                                <Grid Grid.Row="1">
+                                    <Expander IsExpanded="False" Header="Options">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="1*"/>
+                                                <ColumnDefinition Width="1*"/>
+                                                <ColumnDefinition Width="1*"/>
+                                                <ColumnDefinition Width="1*"/>
+                                                <ColumnDefinition Width="1*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Button x:Name="BtAjouter" Grid.Column="0" Opacity="0.5" MouseEnter="BtAjouter_MouseEnter" MouseLeave="BtAjouter_MouseLeave" BorderBrush="Transparent" Background="Transparent" Click="BtAjouter_Click" Height="64" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                                                <Image Source="../Img/AddAdmin.png" ></Image>
+                                            </Button>
+                                            <Button x:Name="BtModifier" Grid.Column="2" Opacity="0.5" MouseEnter="BtModifier_MouseEnter" MouseLeave="BtModifier_MouseLeave" BorderBrush="Transparent" Background="Transparent" Click="BtModifier_Click" Height="64" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                                                <Image Source="../Img/ModifierB.png"/>
+                                            </Button>
+                                            <Button x:Name="BtSupprimer" Grid.Column="4" Opacity="0.5" MouseEnter="BtSupprimer_MouseEnter" MouseLeave="BtSupprimer_MouseLeave" BorderBrush="Transparent" Background="Transparent" Click="BtSupprimer_Click" Height="64" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                                                <Image Source="../Img/SuppAdmin.png"/>
+                                            </Button>
+                                            <Button x:Name="BtConfirmer" Grid.Column="1" Visibility="Hidden" Opacity="0.5" MouseEnter="BtConfirmer_MouseEnter" MouseLeave="BtConfirmer_MouseLeave" BorderBrush="Transparent"  Background="Transparent" Click="BtConfirmer_Click" Height="64" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                                                <Image Source="../Img/confirm .png"/>
+                                            </Button>
+                                            <Button x:Name="BtAnnuler" Grid.Column="3"  Visibility="Hidden" Opacity="0.5" MouseEnter="BtAnnuler_MouseEnter" MouseLeave="BtAnnuler_MouseLeave" BorderBrush="Transparent" Background="Transparent" Click="BtAnnuler_Click"  Height="64" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                                                <Image Source="../Img/cancel.png"/>
+                                            </Button>
+                                        </Grid>
+                                    </Expander>
+                                </Grid>
+                            </Grid>
+                            <Grid Grid.Column="1" Grid.Row="1" Margin="20">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="3*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="5*"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Content="Liste des utilisateurs" Grid.Row="0" FontSize="24" FontFamily="Segoe UI Light" Background="#82c4c8" Foreground="White" VerticalAlignment="Center"></Label>
+                                    <DataGrid x:Name="DataGridAdmin" Margin="0,10" BorderBrush="#82c4c8" Background="White" MouseUp="DataGridAdmin_MouseUp" Grid.Row="1" AutoGenerateColumns="False">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="Identifiant" Width="1*" Binding="{Binding ID}"></DataGridTextColumn>
+                                            <DataGridTextColumn Header="Login" Width="2*" Binding="{Binding LOGIN}"></DataGridTextColumn>
+                                            <DataGridTextColumn Header="Mot de passe" Width="2*" Binding="{Binding MDP}"></DataGridTextColumn>
+                                            <DataGridTextColumn Header="e-Mail" Width="3*" Binding="{Binding MAIL}"></DataGridTextColumn>
+                                            <DataGridTextColumn Header="Role" Width="2*" Binding="{Binding ROLE}"></DataGridTextColumn>
+                                            <DataGridTextColumn Header="Etat" Width="1*" Binding="{Binding ETAT}"></DataGridTextColumn>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                </Grid>
+                                <Grid Grid.Row="1" >
+                                    <Expander IsExpanded="False" Header="Filtres">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="1*"/>
+                                                <ColumnDefinition Width="1*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <ComboBox x:Name="CBFiltresa" SelectedIndex="0" SelectionChanged="CBFiltres_SelectionChanged" VerticalAlignment="Center" Grid.Column="0" Background="White" Margin="5,0">
+                                                <ComboBoxItem Content="Login"/>
+                                                <ComboBoxItem Content="e-Mail"/>
+                                                <ComboBoxItem Content="Role"/>
+                                                <ComboBoxItem Content="Etat"/>
+                                            </ComboBox>
+                                            <TextBox x:Name="TBFiltre" VerticalAlignment="Center" KeyUp="TBFiltre_KeyUp" Grid.Column="1" Background="White" Margin="5,0"/>
+                                        </Grid>
+                                    </Expander>
+
+                                </Grid>
+                            </Grid>
+                        </Grid>
+
+                    </TabItem>
+
+
+                </TabControl>
+
+            </Grid>
+
+        </Grid>
+    </Grid>
+</Window>
